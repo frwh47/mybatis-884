@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="my.mapper.CarOwnerMapper">
+    <resultMap id="BaseResultMap" type="my.model.CarOwner">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="user_name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="my.model.CarOwner">
+        insert into dbo.CarOwner(user_name) values (#{name})
+    </insert>
+
+</mapper>
